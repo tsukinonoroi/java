@@ -1,14 +1,28 @@
+import java.util.Arrays;
 import java.util.Scanner;
-/* нахождение факториала */
-
+// Создание динамического массива, вычисление минимального и максимального элемента в массиве
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int num = scan.nextInt();
-        int factorial = 1;
-        for (int i = 1; i <= num; i++) {
-            factorial *= i;
+        int[] arr = new int[5];
+        for (int i = 0; i < arr.length; i++) {
+            int value = scan.nextInt();
+            arr[i] = value;
         }
-        System.out.println("факториал числа " + num + " равен " + factorial);
+        System.out.println("Array is = " + Arrays.toString(arr));
+        int min = arr[0];
+        int max = arr[1];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            else if (arr[i] > min || arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+
+        System.out.println("Minimal = " + min);
+        System.out.println("Max = " + max);
     }
 }
