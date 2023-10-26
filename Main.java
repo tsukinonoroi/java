@@ -1,30 +1,17 @@
-import java.util.Arrays;
 import java.util.Scanner;
-// Создание динамического массива, вычисление минимального и максимального элемента в массиве
+// Найти такую пару элементов в массиве, чья сумма даст значение переменной target
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the count of elements in array = ");
-        int a = scan.nextInt();
-        int[] arr = new int[a];
-        for (int i = 0; i < arr.length; i++) {
-            int value = scan.nextInt();
-            arr[i] = value;
-        }
-        System.out.println("Array is = " + Arrays.toString(arr));
-        int min = arr[0];
-        int max = arr[1];
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
-            }
-            else if (arr[i] > min || arr[i] > max) {
-                max = arr[i];
+        int[] arr = {1,2,3,4,5,6,7,8,9};
+        int target = 9;
+        for (int start = 0; start < arr.length; start++) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[start] + arr[i] == target) {
+                    System.out.println("indexes of array " + start + "," + i);
+                }
+
+                }
             }
         }
 
-
-        System.out.println("Minimal = " + min);
-        System.out.println("Max = " + max);
     }
-}
