@@ -4,7 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int[] arr = new int[5];
+        System.out.println("Enter the count of elements in array = ");
+        int a = scan.nextInt();
+        int[] arr = new int[a];
         for (int i = 0; i < arr.length; i++) {
             int value = scan.nextInt();
             arr[i] = value;
