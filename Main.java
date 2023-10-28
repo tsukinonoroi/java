@@ -1,16 +1,43 @@
 import java.util.Scanner;
-// Найти такую пару элементов в массиве, чья сумма даст значение переменной target //////////
+import java.util.Arrays;
+// Создание динамического двумерного массива, поиск максимального и минимального элемента в нем
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
-        int target = 9;
-        for (int start = 0; start < arr.length; start++) {
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[start] + arr[i] == target) {
-                    System.out.println("Indexes of array " + start + "," + i);
-                }
+        Scanner scan = new Scanner(System.in);
+        int rows = scan.nextInt();
+        int columns = scan.nextInt();
 
+        int[][] matrix = new int[columns][rows];
+
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                int value = scan.nextInt();
+                matrix[i][j] = value;
+            }
+        }
+
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int min = matrix[0][0];
+        int max = matrix[0][1];
+
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                if (matrix[i][j] < min) {
+                    min = matrix[i][j];
+                }
+                else if (matrix[i][j] > max || matrix[i][j] > min) {
+                    max = matrix[i][j];
                 }
             }
         }
+
+        System.out.println("Max el = " + max);
+        System.out.println("Min el = " + min);
     }
+}
