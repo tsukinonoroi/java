@@ -1,26 +1,34 @@
 package org.example;
 
-
-/*  */
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        ArrayList<String> surnames = new ArrayList<>();
-        String team = scan.nextLine();
-        String surname1 = scan.nextLine();
-        surnames.add(String.valueOf(surname1));
-        String surname2 = scan.nextLine();
-        surnames.add(String.valueOf(surname2));
-        String surname3 = scan.nextLine();
-        surnames.add(String.valueOf(surname3));
+        String lucky = scan.nextLine();
+        if (lucky.length() != 6) {
+            System.out.println("номер билета должен быть 6-ти значным");
+        }
 
-        Collections.sort(surnames);
+        ArrayList<Integer> arr = new ArrayList<>();
 
-        System.out.print(team + ": " + "\n" + surnames.get(0) + "\n" + surnames.get(1) +  "\n" + surnames.get(2));
+        for (int i = 0; i < lucky.length(); i++) {
+            char digitChar = lucky.charAt(i);
+            arr.add(Integer.parseInt(String.valueOf(digitChar)));
+
+        }
+
+        int luck1 = arr.get(0) + arr.get(1) + arr.get(2);
+        int luck2 = arr.get(3) + arr.get(4) + arr.get(5);
+
+        if (luck1 == luck2) {
+            System.out.println("LUCKY TICKET!");
+        }
+        else {
+            System.out.println("UNLUCKY TICKET :( ");
+        }
+
 
     }
 }
