@@ -1,26 +1,30 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-     List<Integer> list1 = new ArrayList<>();
-     List<Integer> list2 = new ArrayList<>();
-     Scanner scan = new Scanner(System.in);
-     while (list1.size() < 3) {
-         list1.add(scan.nextInt());
-     }
-        System.out.println("list 1 ---> : " + list1);
-     while (list2.size() < 3) {
-         list2.add(scan.nextInt());
-     }
-        System.out.println("list 2 ---> : " + list2);
-        List<Integer> merge = new ArrayList<>();
-        list1.addAll(list2);
-        Collections.sort(list1);
-        System.out.println("merged & sorted lists ---> " + list1);
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the num : ");
+        double num = scan.nextDouble();
+        System.out.print("Enter the power : ");
+        double x = scan.nextDouble();
+        System.out.println(pow(num,x));
+    }
+
+    public static double pow(double num, double x) {
+        if (x == 1) {
+            return 1.0;
+        }
+        double result = 1.0;
+        double absX = Math.abs(x);
+        for (int i = 0; i < absX; i++) {
+            result *= num;
+        }
+
+        if (x < 0) {
+            result = 1/result;
+        }
+        return result;
     }
 }
