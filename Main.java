@@ -1,10 +1,7 @@
 package org.example;
 
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
 
 public class Main  {
     public static int size = 5_00_000_000;
