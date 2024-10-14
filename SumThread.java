@@ -22,4 +22,5 @@ public class SumThread extends Thread {
             partialSum += array[i];
         }
     }
+    //
 }
