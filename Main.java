@@ -34,7 +34,7 @@ public class Main  {
 
         int max1 = thread1.getMax();
         int max2 = thread2.getMax();
-        System.out.println(max1 + " " + max2);
+        System.out.println(Math.max(max1, max2));
     }
 
 }
