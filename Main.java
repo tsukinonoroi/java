@@ -10,32 +10,29 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int size = scan.nextInt();
-        List<Integer> arr = new ArrayList<>();
-
-        addElementToArr(arr, scan, size);
-
-        System.out.println(arr);
-
-        zeroToEnd(arr);
-
-        System.out.println(arr);
+        int num = scan.nextInt();
+        isPowerOfFour(num);
 
     }
 
-    public static void addElementToArr(List<Integer> arr, Scanner scan, int size) {
-        for (int i = 0; i < size; i++) {
-            arr.add(scan.nextInt());
-        }
-    }
-
-    public static void zeroToEnd(List<Integer> arr) {
-        Collections.sort(arr);
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) == 0) {
-                arr.addLast(arr.get(i));
-                arr.remove(arr.get(i));
+    public static void isPowerOfFour(int num) {
+        for (int i = 0; i < 100_000; i++) {
+            if (pow(4, i) == num) {
+                System.out.println("true" + " " + i);
+                break;
+            }
+            else if(pow(4, i) > num) {
+                System.out.println("false" + " " + i); //степень, которая превышает заданный юзером num ; юзер задал 325 (превышет 256(4 степень)), но не дотягивает до 1024(5 степень)
+                break;
             }
         }
+    }
+
+    public static int pow(int number, int i) {
+        int result = 1;
+        for (int j = 0; j < i; j++) {
+            result *= number;
+        }
+        return result;
     }
 }
