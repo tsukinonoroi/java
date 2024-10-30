@@ -17,6 +17,7 @@ public class Main {
         squareNums(list);
         Collections.sort(list);
         System.out.println(list);
+        //
     }
 
     public static List<Integer> squareNums(List<Integer> list) {
